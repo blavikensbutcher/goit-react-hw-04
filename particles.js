@@ -816,8 +816,7 @@ var pJS = function (tag_id, params) {
         init();
       }
     } else if (
-
-    /* on click event */
+      /* on click event */
       pJS.interactivity.events.onclick.enable &&
       isInArray('bubble', pJS.interactivity.events.onclick.mode)
     ) {
@@ -1444,7 +1443,7 @@ window.particlesJS = function (tag_id, params) {
   canvas_el.className = pJS_canvas_class;
 
   /* set size canvas */
-  canvas_el.style.width = '100%';
+  canvas_el.style.width = '200%';
   canvas_el.style.height = '100%';
 
   /* append canvas */

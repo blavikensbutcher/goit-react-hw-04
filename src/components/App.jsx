@@ -7,7 +7,6 @@ import { Loader } from './Loader/Loader.jsx';
 import { LoadMoreBtn } from './LoadMoreBtn/LoadMoreBtn.jsx';
 import toast, { Toaster } from 'react-hot-toast';
 import Modal from 'react-modal';
-import { ErrorMessage } from './ErrorMessage/ErrorMessage.jsx';
 
 function App() {
   const [response, setResponse] = useState([]);

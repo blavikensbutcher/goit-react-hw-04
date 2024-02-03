@@ -1,10 +1,26 @@
 import css from './SearchBar.module.css';
-import { getImages } from '../../js/api.js';
+import toast from 'react-hot-toast';
 
-export const SearchBar = ({ onSearch }) => {
+export const SearchBar = ({ onSearch, setPage }) => {
   function handleSubmit(event) {
     event.preventDefault();
+    /////////////// ADD TOAST FOR EMPTY QUERY /////////////////
+    if (event.target.elements.searchQuery.value === '') {
+      toast.error("Field can't be empty!", {
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+        },
+      });
+    }
+    /////////////DROP PAGE COUNTER IF ////////////////
+
+    setPage(1);
+
+    //////////// ADD SUBMIT FORM TO USE STATE QUERY ///////////////
     onSearch(event.target.elements.searchQuery.value);
+
     event.target.reset();
   }
 

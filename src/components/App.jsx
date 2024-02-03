@@ -7,6 +7,7 @@ import { Loader } from './Loader/Loader.jsx';
 import { LoadMoreBtn } from './LoadMoreBtn/LoadMoreBtn.jsx';
 import toast, { Toaster } from 'react-hot-toast';
 import Modal from 'react-modal';
+import { ErrorMessage } from './ErrorMessage/ErrorMessage.jsx';
 
 function App() {
   const [response, setResponse] = useState([]);
@@ -30,7 +31,7 @@ function App() {
         return [...prevState, ...fetchedData.data.results];
       });
     } catch (e) {
-      toast.error('something went wrong 😥');
+      toast.error('SERVER IS NOT AVAILABLE 😥');
     } finally {
       setLoading(false);
     }

@@ -13,17 +13,8 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState('');
   const [page, setPage] = useState(1);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   Modal.setAppElement('#root');
-
-  function openModal() {
-    setModalIsOpen(true);
-  }
-
-  function closeModal() {
-    setModalIsOpen(false);
-  }
 
   async function searchImages(query, page) {
     try {
@@ -53,12 +44,7 @@ function App() {
     <>
       <SearchBar onSearch={setQuery} setPage={setPage} />
       {page === 1 ? loading && <Loader /> : null}
-      <ImageGallery
-        data={response}
-        openModal={openModal}
-        closeModal={closeModal}
-        modalIsOpen={modalIsOpen}
-      />
+      <ImageGallery data={response} />
       {response.length > 0 && <LoadMoreBtn setPage={setPage} page={page} />}
       <Toaster position={'top-right'} />
     </>

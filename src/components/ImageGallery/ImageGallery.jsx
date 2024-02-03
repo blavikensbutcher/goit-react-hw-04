@@ -1,7 +1,7 @@
 import { ImageCard } from '../ImageCard/ImageCard.jsx';
 import css from './ImageGallery.module.css';
 
-export const ImageGallery = ({ data, openModal, closeModal, modalIsOpen }) => {
+export const ImageGallery = ({ data }) => {
   return (
     <ul className={css.list}>
       {data.map(item => {
@@ -11,9 +11,10 @@ export const ImageGallery = ({ data, openModal, closeModal, modalIsOpen }) => {
             description={item.alt_description}
             imageRegular={item.urls.regular}
             imageSmall={item.urls.small}
-            openModal={openModal}
-            closeModal={closeModal}
-            modalIsOpen={modalIsOpen}
+            likes={item.likes}
+            username={item.user.username}
+            avatar={item.user.profile_image.large}
+            name={item.user.name}
           />
         );
       })}

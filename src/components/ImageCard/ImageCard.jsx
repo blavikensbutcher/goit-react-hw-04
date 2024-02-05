@@ -23,15 +23,17 @@ export const ImageCard = ({
   return (
     <li className={css.item}>
       <img src={imageSmall} width={330} height={200} alt={description} onClick={openModal} />
-      <ImageModal
-        closeModal={closeModal}
-        modalIsOpen={modalIsOpen}
-        imageRegular={imageRegular}
-        likes={likes}
-        username={username}
-        name={name}
-        avatar={avatar}
-      />
+      {modalIsOpen && (
+        <ImageModal
+          closeModal={closeModal}
+          modalIsOpen={modalIsOpen}
+          imageRegular={imageRegular}
+          likes={likes}
+          username={username}
+          name={name}
+          avatar={avatar}
+        />
+      )}
     </li>
   );
 };

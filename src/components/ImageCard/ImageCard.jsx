@@ -22,7 +22,14 @@ export const ImageCard = ({
 
   return (
     <li className={css.item}>
-      <img src={imageSmall} width={330} height={200} alt={description} onClick={openModal} />
+      <img
+        src={imageSmall}
+        width={330}
+        height={200}
+        alt={description}
+        onClick={openModal}
+        className={css.image}
+      />
       {modalIsOpen && (
         <ImageModal
           closeModal={closeModal}

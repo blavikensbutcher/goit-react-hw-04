@@ -4,3 +4,7 @@
     padding: 5px;
     background-color: white
 }
+
+.image {
+    object-fit: cover
+}
